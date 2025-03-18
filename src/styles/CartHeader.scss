@@ -1,0 +1,107 @@
+@use "@/styles/global.scss" as *;
+
+.cart_header {
+    width: min-content;
+    position: relative;
+    transition: all .3s ease-out;
+  
+  &.active{
+  transform: scale(1.5);
+  path{
+    fill: $primary-color;
+  }
+  }
+  
+    > button {
+      border: none;
+      color: transparent;
+      background-color: transparent;
+      position: relative;
+      z-index: 1;
+      cursor: pointer;
+      > svg {
+        position: relative;
+        z-index: 2;
+      }
+  
+      > .quantity_cart {
+        color: $action-color;
+        position: absolute;
+        z-index: 3;
+        right: 0;
+        top: 0;
+        font-size: 10px;
+        text-align: center;
+        margin: 0;
+        display: block;
+        background: $primary-color;
+        border-radius: 100%;
+        width: 12px;
+        aspect-ratio: 1/1;
+        &::before {
+          content: "";
+          background-color: transparent;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1;
+          border: 4px solid rgb(255, 255, 255);
+          border-radius: 50%;
+          transform: translate(-20%, -20%);
+        }
+      }
+    }
+  }
+
+  .cart_box_wrapper {
+    * {
+      margin: 0;
+    }
+    padding: $margin-regular/4;
+    position: absolute;
+    background-color: $gray-color;
+    width: 400px;
+    height: min-content;
+    overflow-y: scroll;
+    max-height: 40vh;
+    top: 100px;
+    right: $margin-regular;
+    z-index: 1000;
+    box-shadow: 20px 22px 31px -12px rgba(0, 0, 0, 0.84);
+    -webkit-box-shadow: 20px 22px 31px -12px rgba(0, 0, 0, 0.84);
+    -moz-box-shadow: 20px 22px 31px -12px rgba(0, 0, 0, 0.84);
+  
+    > button {
+      margin-bottom: $margin-regular;
+      @include button-style;
+      // padding: $margin-regular/2;
+    }
+  
+    > .product_cart_box {
+      display: grid;
+      margin-bottom: 5%;
+      grid-template-columns: min-content auto max-content;
+      gap: 5%;
+  
+      .detail_order {
+        display: flex;
+        flex-direction: column;
+        * {
+          margin: 0;
+        }
+      }
+  
+      > img {
+        float: left;
+        aspect-ratio: 1/1;
+        width: 50px;
+      }
+  
+      button {
+        float: right;
+        @include button-style;
+      }
+    }
+  }

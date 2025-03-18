@@ -1,0 +1,24 @@
+
+@font-face {
+    font-family: 'segoe';
+    /* src: url('../public/fonts/segoe_ui/SegoeUI-Bold.ttf') format('truetype'); */
+    src: url('/public/fonts/segoe_ui/SegoeUI-Bold') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'segoe';
+    src: url('/public/fonts/segoe_ui/SegoeUI-Regular.ttf') format('truetype');
+    /* src: url('@/fonts/segoe_ui/SegoeUI-Regular.ttf') format('truetype'); */
+    font-weight: normal;
+    font-style: normal;
+  }
+   
+  @font-face {
+    font-family: 'segoe';
+    src: url('/public/fonts/segoe_ui/segoe-ui-semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+  }
+   

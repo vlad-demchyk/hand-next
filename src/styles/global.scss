@@ -1,0 +1,98 @@
+@use "fonts"; // виклик шрифтів
+
+$primary-color: #37cece;
+$gray-color: #f8f8f8;
+$action-color: #ECFBFB;
+$hover-color: #2CA7A7;
+$background-color: white;
+$error-color: #f03800;
+$button-color: transparent;
+$font-color: #3d3d3d;
+$font-color-action: #727272;
+$font-medium: 19px;
+$font-small: 15px;
+$font-banner: 70px;
+$font-medium-liquid: 1.8vw;
+$font-small-liquid: 1.1vw;
+$font-banner-liquid: 5.2vw;
+$small-element-liquid: .8vw;
+$margin-regular: 5%;
+$margin-small: 5%/2;
+$border-radius: clamp(1px, 0.8vw, 40px);
+$gap-regular: 2vw;
+$gap-small: 1vw;
+$icon-size-small: 2.9vw;
+
+$button-width: 5vw;
+$button-height: 1.3vw;
+
+
+//змінні для bold шрифту
+$bold-font-family: "segoe", sans-serif;
+$bold-font-weight: bold;
+
+//змінні для semibold шрифту
+$semi_bold-font-family: "segoe", sans-serif;
+$semi_bold-font-weight: 600;
+
+// змінні для параграфу
+$paragraph-font-family: "segoe", sans-serif;
+$paragraph-font-weight: normal;
+ 
+
+@mixin bold-text { //базові стилі для головного тексту
+    font-family: $bold-font-family;
+    font-weight: $bold-font-weight;
+    color: $font-color;
+    text-align: left;
+} //для виклику @include
+
+@mixin paragraph-text { //базові стилі для параграфу
+    font-family: $paragraph-font-family;
+    font-weight: $paragraph-font-weight;
+    color: $font-color;
+    text-align: left;
+} //для виклику @include
+@mixin semi-text { //базові стилі для параграфу
+    font-family: $semi_bold-font-family;
+    font-weight: $semi_bold-font-weight;
+    color: $font-color;
+    text-align: left;
+} //для виклику @include
+
+@mixin button-style{
+    display: flex;
+    justify-content: center;
+    width: 105px;
+    height: 35px;
+    min-width: max-content;
+    gap: 2%;
+    align-items: center;
+    padding: $margin-small;
+    text-decoration: none;
+    border-radius: $border-radius;
+    border: none;
+    background-color: $primary-color;
+    @include paragraph-text;
+    font-size: $font-small;
+    color: $background-color;
+    > img {
+      width: 20px;
+    }
+  
+    &:active,
+    &:hover {
+      background-color: $hover-color;
+    }
+}
+
+body{
+    margin-inline: $margin-regular;
+    margin-block: 0;
+    background-color: $background-color;
+}
+
+*{
+    margin: 0;
+    @include paragraph-text;
+}
